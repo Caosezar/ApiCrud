@@ -6,6 +6,7 @@ C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.AssemblyIn
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.csproj.CoreCompileInputs.cache
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.sourcelink.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\appsettings.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\ApiCrud.staticwebassets.endpoints.json
@@ -19,7 +20,6 @@ C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\Microsoft.OpenApi.
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.sourcelink.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
