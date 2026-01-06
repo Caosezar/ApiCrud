@@ -1,0 +1,8 @@
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.csproj.AssemblyReference.cache
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.AssemblyInfoInputs.cache
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.AssemblyInfo.cs
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.csproj.CoreCompileInputs.cache
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Moto_\source\repos\ApiCrud\ApiCrud\obj\Debug\net10.0\ApiCrud.MvcApplicationPartsAssemblyInfo.cache
