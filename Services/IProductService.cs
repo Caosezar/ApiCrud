@@ -7,7 +7,6 @@ namespace ApiCrud.Services
     /// 
     /// ℹ️ POR QUE UMA INTERFACE AQUI TAMBÉM?
     /// - Mantém a separação de responsabilidades
-    /// - Possibilita testes unitários (mock da service)
     /// - Define o contrato que o Controller espera
     /// 
     /// IMPORTANTE: Service contém a LÓGICA DE NEGÓCIO

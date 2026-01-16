@@ -35,11 +35,15 @@ builder.Services.AddDbContext<ApiCrudContext>(options =>
 // Scoped = cria nova instância por requisição
 // O Repository recebe o DbContext automaticamente
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICaioRepository, CaioRepository>();
+
 
 // 3️⃣  REGISTRAR SERVICE (Lógica de Negócio)
 // Scoped = cria nova instância por requisição
 // A Service recebe o Repository automaticamente
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICaioService, CaioService>();
+
 
 // Add controllers
 builder.Services.AddControllers();
