@@ -26,6 +26,7 @@ namespace ApiCrud.Data
 
         /// <summary>Tabela de Produtos</summary>
         public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Caios { get; set; }
 
         // /// <summary>Tabela de Usuários</summary>
         // public DbSet<User> Users { get; set; }
@@ -127,12 +128,6 @@ namespace ApiCrud.Data
 
                 entity.Property(e => e.UpdatedAt)
                     .HasDefaultValueSql("GETDATE()");
-
-                // Relacionamento com Category (N Products -> 1 Category)
-                entity.HasOne(e => e.Category)
-                    .WithMany(c => c.Products)
-                    .HasForeignKey(e => e.CategoryId)
-                    .OnDelete(DeleteBehavior.SetNull);
 
                 entity.HasIndex(e => e.Name);
             });

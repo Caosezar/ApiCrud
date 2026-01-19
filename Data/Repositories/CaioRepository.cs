@@ -14,7 +14,7 @@ namespace ApiCrud.Data.Repositories
 
         public async Task<IEnumerable<Caio>> GetAllCaiosAsync()
         {
-            return await _context.Caios.ToListAsync();
+            return (IEnumerable<Caio>)await _context.Caios.ToListAsync();
         }
     }
 }
