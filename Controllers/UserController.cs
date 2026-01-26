@@ -1,4 +1,5 @@
 ﻿using ApiCrud.Models;
+using ApiCrud.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiCrud.Controllers
@@ -7,6 +8,12 @@ namespace ApiCrud.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
+        private readonly IUserService _service;
+        public UserController(IUserService service)
+        {
+            _service = service;
+        }
+
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<User>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -15,7 +22,8 @@ namespace ApiCrud.Controllers
         {
             try
             {
-                return Ok(null);
+                var User = await _service.GetAllUsersAsync();
+                return Ok(User);
             }
             catch (Exception ex)
             {
