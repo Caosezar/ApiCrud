@@ -29,7 +29,7 @@ namespace ApiCrud.Data
         public DbSet<Product> Caios { get; set; }
 
         // /// <summary>Tabela de Usuários</summary>
-        // public DbSet<User> Users { get; set; }
+         public DbSet<User> Users { get; set; }
 
         // /// <summary>Tabela de Categorias</summary>
         // public DbSet<Category> Categories { get; set; }
