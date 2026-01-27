@@ -36,6 +36,7 @@ builder.Services.AddDbContext<ApiCrudContext>(options =>
 // O Repository recebe o DbContext automaticamente
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICaioRepository, CaioRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();  
 
 
 // 3️⃣  REGISTRAR SERVICE (Lógica de Negócio)
@@ -43,6 +44,7 @@ builder.Services.AddScoped<ICaioRepository, CaioRepository>();
 // A Service recebe o Repository automaticamente
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICaioService, CaioService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 
 // Add controllers

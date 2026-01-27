@@ -28,8 +28,8 @@ namespace ApiCrud.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Product> Caios { get; set; }
 
-        // /// <summary>Tabela de Usuários</summary>
-        // public DbSet<User> Users { get; set; }
+        /// <summary>Tabela de Usuários</summary>
+        public DbSet<User> Users { get; set; }
 
         // /// <summary>Tabela de Categorias</summary>
         // public DbSet<Category> Categories { get; set; }
@@ -51,38 +51,38 @@ namespace ApiCrud.Data
             base.OnModelCreating(modelBuilder);
 
             // // Configuração da tabela Users
-            // modelBuilder.Entity<User>(entity =>
-            // {
-            //     entity.HasKey(e => e.Id);
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.Id);
 
-            //     entity.Property(e => e.FirstName)
-            //         .IsRequired()
-            //         .HasMaxLength(100);
+                entity.Property(e => e.FirstName)
+                      .IsRequired()
+                      .HasMaxLength(100);
 
-            //     entity.Property(e => e.LastName)
-            //         .IsRequired()
-            //         .HasMaxLength(100);
+                entity.Property(e => e.LastName)
+                      .IsRequired()
+                      .HasMaxLength(100);
 
-            //     entity.Property(e => e.Email)
-            //         .IsRequired()
-            //         .HasMaxLength(255);
+                entity.Property(e => e.Email)
+                      .IsRequired()
+                      .HasMaxLength(255);
+            
+                entity.Property(e => e.Phone)
+                      .HasMaxLength(20);
 
-            //     entity.Property(e => e.Phone)
-            //         .HasMaxLength(20);
+                entity.Property(e => e.IsActive)
+                      .HasDefaultValue(true);
 
-            //     entity.Property(e => e.IsActive)
-            //         .HasDefaultValue(true);
+                entity.Property(e => e.CreatedAt)
+                      .HasDefaultValueSql("GETDATE()");
 
-            //     entity.Property(e => e.CreatedAt)
-            //         .HasDefaultValueSql("GETDATE()");
+                entity.Property(e => e.UpdatedAt)
+                      .HasDefaultValueSql("GETDATE()");
 
-            //     entity.Property(e => e.UpdatedAt)
-            //         .HasDefaultValueSql("GETDATE()");
-
-            //     // Índice único para email
-            //     entity.HasIndex(e => e.Email)
-            //         .IsUnique();
-            // });
+                // Índice único para email
+                entity.HasIndex(e => e.Email)
+                      .IsUnique();
+             });
 
             // // Configuração da tabela Categories
             // modelBuilder.Entity<Category>(entity =>
