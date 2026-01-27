@@ -22,16 +22,14 @@ namespace ApiCrud.Controllers
         {
             try
             {
-                var User = await _service.GetAllUsersAsync();
-                return Ok(User);
+                var user = await _service.GetAllUsersAsync();
+                return Ok(user);
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
                   new { message = "Erro ao buscar usuários", error = ex.Message });
-
             }
-
         }
     }
 }
