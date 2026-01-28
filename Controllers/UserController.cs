@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiCrud.Models;
+using ApiCrud.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 
 namespace ApiCrud.Controllers
 {
-    using ApiCrud.Models;
-    using ApiCrud.Services;
-    using Microsoft.AspNetCore.Mvc;
+   
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -25,7 +26,7 @@ namespace ApiCrud.Controllers
                 var user = await _service.GetUserByIdAsync(id);
                 if (user == null)
                 {
-                    return NotFound(new { message = $"Usuário com Id {id} não encontardo" });
+                    return NotFound(new { message = $"Usuário com Id {id} não encontrado" });
                 }
                 return Ok(user);
             }
@@ -36,7 +37,7 @@ namespace ApiCrud.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    new { message = "Error ao buscar usuário", error = ex.Message });
+                    new { message = "Erro ao buscar usuário", error = ex.Message });
             }
         }
     }
