@@ -2,7 +2,7 @@
 using ApiCrud.Models;
 
 namespace ApiCrud.Services
-{    
+{
     public class UserService : IUserService
     {
         private readonly IUserRepository _repository;
@@ -14,6 +14,15 @@ namespace ApiCrud.Services
         {
             return await _repository.GetAllUsersAsync();
         }
-       public async Task GetAllAsync() { }
+        public async Task GetAllAsync() { }
+
+        public async Task<User?> GetUserByIdAsync(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("ID deve ser maior que 0");
+            }
+            return await _repository.GetUserByIdAsync(id);
+        }
     }
 }
