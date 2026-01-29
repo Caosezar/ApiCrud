@@ -57,5 +57,27 @@ namespace ApiCrud.Controllers
                     new { message = "Erro ao buscar usuário", error = ex.Message });
             }
         }
+        [HttpPost]
+        [ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<User>> Create([FromBody] User newUser)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var createdUser = await _service.CreateUserAsync(newUser);
+                return CreatedAtAction(nameof(GetById), new { id = createdUser.Id }, createdUser);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Erro ao criar usuário", error = ex.Message });
+            }
+        }
     }
+
 }
