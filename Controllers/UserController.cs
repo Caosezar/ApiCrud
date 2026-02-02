@@ -1,9 +1,11 @@
 ﻿using ApiCrud.Models;
 using ApiCrud.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 
 namespace ApiCrud.Controllers
 {
+   //busca de usuário por id
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -13,25 +15,6 @@ namespace ApiCrud.Controllers
         {
             _service = service;
         }
-
-        [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<User>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
-        public async Task<ActionResult<IEnumerable<User>>> GetAll()
-        {
-            try
-            {
-                var user = await _service.GetAllUsersAsync();
-                return Ok(user);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                  new { message = "Erro ao buscar usuários", error = ex.Message });
-            }
-        }
-
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

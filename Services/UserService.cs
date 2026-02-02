@@ -3,19 +3,15 @@ using ApiCrud.Models;
 
 namespace ApiCrud.Services
 {
+    //busca de usuário por id
     public class UserService : IUserService
     {
         private readonly IUserRepository _repository;
+
         public UserService(IUserRepository repository)
         {
             _repository = repository;
         }
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
-        {
-            return await _repository.GetAllUsersAsync();
-        }
-        public async Task GetAllAsync() { }
-
         public async Task<User?> GetUserByIdAsync(int id)
         {
             if (id <= 0)
