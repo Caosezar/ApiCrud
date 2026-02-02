@@ -24,5 +24,30 @@ namespace ApiCrud.Services
             }
             return await _repository.GetUserByIdAsync(id);
         }
+        //atualização de usuário
+        public async Task<User> UpdateUserAsync(int id, User user)
+        {
+            var existingProduct = await _repository.GetUserByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new KeyNotFoundException($"Produto com ID {id} não encontrado");
+            }
+            
+            if (string.IsNullOrWhiteSpace(user.FirstName))
+            {
+                throw new ArgumentException("Nome usuário é obrigatório");
+            }
+
+           existingProduct.FirstName = user.FirstName;
+           existingProduct.LastName = user.LastName;
+           existingProduct.Email = user.Email;
+           existingProduct.Phone = user.Phone;
+           existingProduct.BirthDate = user.BirthDate;
+           existingProduct.IsActive = user.IsActive;
+           existingProduct.CreatedAt = user.CreatedAt;
+
+            await _repository.UpdateUserAsync(existingProduct);
+            return existingProduct;
+        }
     }
 }

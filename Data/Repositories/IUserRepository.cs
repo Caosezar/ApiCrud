@@ -7,5 +7,7 @@ namespace ApiCrud.Data.Repositories
         Task<IEnumerable<User>> GetAllUsersAsync();
 
         Task<User?> GetUserByIdAsync(int id);
+
+        Task UpdateUserAsync(User user);
     }
 }

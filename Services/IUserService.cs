@@ -7,5 +7,7 @@ namespace ApiCrud.Services
         Task<IEnumerable<User>> GetAllUsersAsync();
 
         Task<User?> GetUserByIdAsync(int id);
+
+        Task<User> UpdateUserAsync(int id, User user);
     }
 }
