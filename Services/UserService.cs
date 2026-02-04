@@ -26,7 +26,7 @@ namespace ApiCrud.Services
         }
         public async Task<User> CreateUserAsync(User user)
         {          
-            await _repository.AddUserAsync(user);
+            await _repository.CreateUserAsync(user);
             return user;
         }
     }

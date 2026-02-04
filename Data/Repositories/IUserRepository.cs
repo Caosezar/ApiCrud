@@ -6,6 +6,6 @@ namespace ApiCrud.Data.Repositories
     {
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User?> GetUserByIdAsync(int id);
-        Task<User?> AddUserAsync(User user);
+        Task<User?> CreateUserAsync(User user);
     }
 }
