@@ -6,6 +6,6 @@ namespace ApiCrud.Services
     {
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User?> GetUserByIdAsync(int id);
-        Task<User> CreateUserAsync(User newUser);
+        Task<User> CreateUserAsync(User user);
     }
 }

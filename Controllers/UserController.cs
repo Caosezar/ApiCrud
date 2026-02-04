@@ -61,7 +61,7 @@ namespace ApiCrud.Controllers
         [ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<User>> Create([FromBody] User newUser)
+        public async Task<ActionResult<User>> Create([FromBody] User user)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace ApiCrud.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                var createdUser = await _service.CreateUserAsync(newUser);
+                var createdUser = await _service.CreateUserAsync(user);
                 return CreatedAtAction(nameof(GetById), new { id = createdUser.Id }, createdUser);
             }
             catch (Exception ex)
