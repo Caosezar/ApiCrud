@@ -2,10 +2,12 @@
 using ApiCrud.Models;
 
 namespace ApiCrud.Services
-{    
+{
+    //busca de usuário por id
     public class UserService : IUserService
     {
         private readonly IUserRepository _repository;
+
         public UserService(IUserRepository repository)
         {
             _repository = repository;
@@ -45,4 +47,5 @@ namespace ApiCrud.Services
             return existingUser;
         }
     } 
+    }
 }

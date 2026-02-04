@@ -1,4 +1,4 @@
-﻿using ApiCrud.Models;
+using ApiCrud.Models;
 
 namespace ApiCrud.Data.Repositories
 {

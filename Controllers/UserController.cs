@@ -1,9 +1,11 @@
 ﻿using ApiCrud.Models;
 using ApiCrud.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 
 namespace ApiCrud.Controllers
 {
+   //busca de usuário por id
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
