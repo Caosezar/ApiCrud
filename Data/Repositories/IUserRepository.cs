@@ -1,7 +1,11 @@
-﻿namespace ApiCrud.Data.Repositories
+﻿using ApiCrud.Models;
+
+namespace ApiCrud.Data.Repositories
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<Models.User>> GetAllUsersAsync();
+        Task<User?> GetUserByIdAsync(int id);
+
+        Task UpdateUserAsync(User user);
     }
 }
