@@ -24,5 +24,10 @@ namespace ApiCrud.Services
             }
             return await _repository.GetUserByIdAsync(id);
         }
+        public async Task<User> CreateUserAsync(User user)
+        {          
+            await _repository.CreateUserAsync(user);
+            return user;
+        }
     }
 }
