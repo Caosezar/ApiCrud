@@ -1,6 +1,7 @@
 ﻿using ApiCrud.Models;
 using ApiCrud.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 
 namespace ApiCrud.Controllers
 {
@@ -13,7 +14,7 @@ namespace ApiCrud.Controllers
         {
             _service = service;
         }
-
+      
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<User>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -55,6 +56,38 @@ namespace ApiCrud.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     new { message = "Erro ao buscar usuário", error = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public async Task<ActionResult<User>> Update(int id, [FromBody] User user)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var updatedUser = await _service.UpdateUserAsync(id, user);
+                return Ok(updatedUser);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Erro ao atualizar usuário", error = ex.Message });
+
             }
         }
         [HttpPost]
