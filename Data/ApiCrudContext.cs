@@ -78,6 +78,34 @@ namespace ApiCrud.Data
 
                 entity.Property(e => e.UpdatedAt)
                       .HasDefaultValueSql("GETDATE()");
+                
+                entity.Property(e => e.PasswordHash)
+                      .IsRequired()
+                      .HasMaxLength(500);
+
+                entity.Property(e => e.Username)
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                entity.Property(e => e.RoleId)
+                      .HasColumnType("tinyint")
+                      .IsRequired()
+                      .HasDefaultValue((byte)3);
+
+                entity.Property(e => e.LastLogin)
+                      .HasDefaultValueSql("GETDATE()");
+
+                entity.Property(e => e.FailedLogininAttempts)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.LockoutEnd)
+                      .HasDefaultValueSql("GETDATE()");
+
+                entity.Property(e => e.RefreshToken)
+                      .HasMaxLength(500);
+
+                entity.Property(e => e.RefreshTokenExpiryTime)
+                      .HasDefaultValueSql("GETDATE()");
 
                 // Índice único para email
                 entity.HasIndex(e => e.Email)
@@ -119,6 +147,7 @@ namespace ApiCrud.Data
 
                 entity.Property(e => e.StockQuantity)
                     .HasDefaultValue(0);
+                entity.Property(e => e.CategoryId);
 
                 entity.Property(e => e.IsAvailable)
                     .HasDefaultValue(true);
