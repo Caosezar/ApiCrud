@@ -44,7 +44,7 @@ namespace ApiCrud.Services
         /// EXEMPLO DE USO:
         /// var produtos = await _service.GetAllProductsAsync();
         /// </summary>
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        public async Task<IEnumerable<Products>> GetAllProductsAsync()
         {
             // Aqui poderíamos aplicar filtros, ordenação, paginação, etc
             var products = await _repository.GetAllProductsAsync();
@@ -54,7 +54,7 @@ namespace ApiCrud.Services
         /// <summary>
         /// Busca um produto pelo ID
         /// </summary>
-        public async Task<Product?> GetProductByIdAsync(int id)
+        public async Task<Products?> GetProductByIdAsync(int id)
         {
             if (id <= 0)
             {
@@ -72,7 +72,7 @@ namespace ApiCrud.Services
         /// - Preço deve ser >= 0
         /// - StockQuantity deve ser >= 0
         /// </summary>
-        public async Task<Product> CreateProductAsync(Product product)
+        public async Task<Products> CreateProductAsync(Products product)
         {
             // VALIDAÇÕES DE NEGÓCIO
             if (string.IsNullOrWhiteSpace(product.Name))
@@ -109,7 +109,7 @@ namespace ApiCrud.Services
         /// <summary>
         /// Atualiza um produto existente
         /// </summary>
-        public async Task<Product> UpdateProductAsync(int id, Product product)
+        public async Task<Products> UpdateProductAsync(int id, Products product)
         {
             // Verifica se o produto existe
             var existingProduct = await _repository.GetProductByIdAsync(id);

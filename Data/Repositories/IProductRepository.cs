@@ -16,16 +16,16 @@ namespace ApiCrud.Data.Repositories
     public interface IProductRepository
     {
         /// <summary>Retorna todos os produtos do banco de dados</summary>
-        Task<IEnumerable<Product>> GetAllProductsAsync();
+        Task<IEnumerable<Products>> GetAllProductsAsync();
 
         /// <summary>Retorna um produto específico pelo ID</summary>
-        Task<Product?> GetProductByIdAsync(int id);
+        Task<Products?> GetProductByIdAsync(int id);
 
         /// <summary>Insere um novo produto no banco</summary>
-        Task AddProductAsync(Product product);
+        Task AddProductAsync(Products product);
 
         /// <summary>Atualiza um produto existente</summary>
-        Task UpdateProductAsync(Product product);
+        Task UpdateProductAsync(Products product);
 
         /// <summary>Remove um produto pelo ID</summary>
         Task DeleteProductAsync(int id);

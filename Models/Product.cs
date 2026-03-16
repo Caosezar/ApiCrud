@@ -7,7 +7,7 @@ namespace ApiCrud.Models
     /// Uma entidade é uma classe que representa uma tabela no banco de dados.
     /// Cada propriedade pública equivale a uma coluna na tabela.
     /// </summary>
-    public class Product
+    public class Products
     {
         /// <summary>Identificador único do produto (Primary Key)</summary>
         public int Id { get; set; }

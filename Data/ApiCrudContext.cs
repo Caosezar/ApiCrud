@@ -25,8 +25,8 @@ namespace ApiCrud.Data
         }
 
         /// <summary>Tabela de Produtos</summary>
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Product> Caios { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<Products> Caios { get; set; }
 
         /// <summary>Tabela de Usuários</summary>
         public DbSet<User> Users { get; set; }
@@ -131,7 +131,7 @@ namespace ApiCrud.Data
             // });
 
             // Configuração da tabela Products
-            modelBuilder.Entity<Product>(entity =>
+            modelBuilder.Entity<Products>(entity =>
             {
                 entity.HasKey(e => e.Id);
 

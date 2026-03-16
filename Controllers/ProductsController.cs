@@ -52,9 +52,9 @@ namespace ApiCrud.Controllers
         /// - 500 Internal Server Error: Erro no servidor
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<Products>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAll()
+        public async Task<ActionResult<IEnumerable<Products>>> GetAll()
         {
             try
             {
@@ -82,10 +82,10 @@ namespace ApiCrud.Controllers
         /// - 400 Bad Request: ID inválido
         /// </summary>
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Products), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Product>> GetById(int id)
+        public async Task<ActionResult<Products>> GetById(int id)
         {
             try
             {
@@ -128,10 +128,10 @@ namespace ApiCrud.Controllers
         /// - 500 Internal Server Error: Erro no servidor
         /// </summary>
         [HttpPost]
-        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(Products), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<Product>> Create([FromBody] Product product)
+        public async Task<ActionResult<Products>> Create([FromBody] Products product)
         {
             try
             {
@@ -172,10 +172,10 @@ namespace ApiCrud.Controllers
         /// - 400 Bad Request: Dados inválidos
         /// </summary>
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Products), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Product>> Update(int id, [FromBody] Product product)
+        public async Task<ActionResult<Products>> Update(int id, [FromBody] Products product)
         {
             try
             {

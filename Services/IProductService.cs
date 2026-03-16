@@ -20,16 +20,16 @@ namespace ApiCrud.Services
         /// - Repository: Apenas retorna do banco
         /// - Service: Pode aplicar regras, filtros, validações, transformações
         /// </summary>
-        Task<IEnumerable<Product>> GetAllProductsAsync();
+        Task<IEnumerable<Products>> GetAllProductsAsync();
 
         /// <summary>Busca um produto pelo ID</summary>
-        Task<Product?> GetProductByIdAsync(int id);
+        Task<Products?> GetProductByIdAsync(int id);
 
         /// <summary>Cria um novo produto com validações</summary>
-        Task<Product> CreateProductAsync(Product product);
+        Task<Products> CreateProductAsync(Products product);
 
         /// <summary>Atualiza um produto com validações</summary>
-        Task<Product> UpdateProductAsync(int id, Product product);
+        Task<Products> UpdateProductAsync(int id, Products product);
 
         /// <summary>Deleta um produto</summary>
         Task<bool> DeleteProductAsync(int id);

@@ -33,7 +33,7 @@ namespace ApiCrud.Data.Repositories
         /// EXEMPLO DE USO:
         /// var produtos = await _repository.GetAllProductsAsync();
         /// </summary>
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        public async Task<IEnumerable<Products>> GetAllProductsAsync()
         {
             // ToListAsync(): Executa a query e traz os dados do banco
             return await _context.Products.ToListAsync();
@@ -45,7 +45,7 @@ namespace ApiCrud.Data.Repositories
         /// EXEMPLO DE USO:
         /// var produto = await _repository.GetProductByIdAsync(1);
         /// </summary>
-        public async Task<Product?> GetProductByIdAsync(int id)
+        public async Task<Products?> GetProductByIdAsync(int id)
         {
             // FirstOrDefaultAsync(id): Retorna primeiro match ou null
             return await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
@@ -55,7 +55,7 @@ namespace ApiCrud.Data.Repositories
         /// Adiciona um novo produto ao banco (CREATE)
         /// Nota: SaveChangesAsync() deve ser chamado pela Service
         /// </summary>
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(Products product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
@@ -65,7 +65,7 @@ namespace ApiCrud.Data.Repositories
         /// Atualiza um produto existente (UPDATE)
         /// Nota: SaveChangesAsync() deve ser chamado pela Service
         /// </summary>
-        public async Task UpdateProductAsync(Product product)
+        public async Task UpdateProductAsync(Products product)
         {
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
