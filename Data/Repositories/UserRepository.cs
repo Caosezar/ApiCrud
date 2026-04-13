@@ -30,6 +30,10 @@ namespace ApiCrud.Data.Repositories
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
-        }       
+        } 
+        public async Task<User?> GetUserByUsernameAsync(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+        }
     }
 }

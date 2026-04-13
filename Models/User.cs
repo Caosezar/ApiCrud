@@ -20,20 +20,20 @@
 
         public DateTime? UpdatedAt { get; set; }
 
-        public string? Username { get; set; }
+        public string Username { get; set; } = string.Empty;
 
-        public string? PasswordHash { get; set; }
+        public string PasswordHash { get; set; } = string.Empty;
 
         public byte? RoleId { get; set; }
 
         public DateTime? LastLogin { get; set; }
 
-        public int? FailedLogininAttempts { get; set; }
+        public byte? FailedLoginAttempts { get; set; }
 
         public DateTime? LockoutEnd { get; set; }
 
         public string? RefreshToken { get; set; }
 
-        public DateTime RefreshTokenExpiryTime { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

@@ -11,5 +11,6 @@ namespace ApiCrud.Services
         Task<User> CreateUserAsync(User user);
 
         Task<User> UpdateUserAsync(int id, User user);
+        Task<User?> GetUserByUsernameAsync(string username);
     }
 }

@@ -95,8 +95,8 @@ namespace ApiCrud.Data
                 entity.Property(e => e.LastLogin)
                       .HasDefaultValueSql("GETDATE()");
 
-                entity.Property(e => e.FailedLogininAttempts)
-                      .HasDefaultValue(0);
+                entity.Property(e => e.FailedLoginAttempts)
+                      .HasDefaultValue((byte)0);
 
                 entity.Property(e => e.LockoutEnd)
                       .HasDefaultValueSql("GETDATE()");
