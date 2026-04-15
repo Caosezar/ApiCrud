@@ -1,5 +1,6 @@
 ﻿using ApiCrud.Models;
 using ApiCrud.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Any;
 
@@ -18,6 +19,7 @@ namespace ApiCrud.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<User>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Authorize]
 
         public async Task<ActionResult<IEnumerable<User>>> GetAll()
         {
@@ -37,6 +39,7 @@ namespace ApiCrud.Controllers
         [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize]
         public async Task<ActionResult<User>> GetById(int id)
         {
             try
@@ -63,6 +66,7 @@ namespace ApiCrud.Controllers
         [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize]
 
         public async Task<ActionResult<User>> Update(int id, [FromBody] User user)
         {
@@ -94,6 +98,7 @@ namespace ApiCrud.Controllers
         [ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        
         public async Task<ActionResult<User>> Create([FromBody] User user)
         {
             try

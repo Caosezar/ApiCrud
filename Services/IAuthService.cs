@@ -5,7 +5,7 @@ namespace ApiCrud.Services
 {
     public interface IAuthService
     {
-        Task<object?> RegisterAsync(RegisterRequestDto dto);
-        Task<LoginResponseDto> LoginAsync(LoginRequestDto dto);  
+        Task<object?> RegisterAsync(RegisterRequestDTO dto);
+        Task<LoginResponseDTO> LoginAsync(LoginRequestDTO dto);  
     }
 }

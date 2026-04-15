@@ -1,5 +1,6 @@
 ﻿using ApiCrud.DTOs;
 using ApiCrud.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiCrud.Controllers
@@ -15,7 +16,8 @@ namespace ApiCrud.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterRequestDto dto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Register([FromBody] RegisterRequestDTO dto)
         {
             if (!ModelState.IsValid)
 
@@ -28,7 +30,8 @@ namespace ApiCrud.Controllers
             return StatusCode(201, result);
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDTO dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

@@ -18,7 +18,7 @@ namespace ApiCrud.Services
             _userRepository = userRepository;
             _configuration = configuration;
         }
-        public async Task<object?> RegisterAsync(RegisterRequestDto dto)
+        public async Task<object?> RegisterAsync(RegisterRequestDTO dto)
         {
             try
             {
@@ -42,13 +42,13 @@ namespace ApiCrud.Services
                 throw new Exception($"Erro no RegisterAsync: {ex.Message}", ex);
             }
         }
-        public async Task<LoginResponseDto?> LoginAsync(LoginRequestDto dto)
+        public async Task<LoginResponseDTO?> LoginAsync(LoginRequestDTO dto)
         {
             var user = await _userRepository.GetUserByUsernameAsync(dto.Username);
             if (user == null) return null;
             if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash)) return null;
             var token = GenerateJwtToken(user);
-            return new LoginResponseDto
+            return new LoginResponseDTO
             {
                 Token = token,
                 ExpiresAt = DateTime.UtcNow.AddHours(8),
